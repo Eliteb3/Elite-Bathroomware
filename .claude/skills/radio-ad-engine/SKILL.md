@@ -76,7 +76,7 @@ days before air — confirm the exact lead time with the NZME rep and update thi
 | Gate | Question | Fail = |
 |---|---|---|
 | **Demand** | Is search climbing (ideally above last year) for this category in the flight month? | Bin it. |
-| **Stock** | Stock covers the flight **plus 4 weeks** of follow-through, in the finish you'll name? | **Hard no.** Flag Josh, loop Dean. |
+| **Stock** | Stock covers the flight **plus 4 weeks** of follow-through, in the finish you'll name? | **Hard no.** Flag Josh, loop Dean. Shopify shows 0/negative on made-to-order lines (e.g. Elite shower kits) — treat as "unverified", not "out", and confirm with Dean. |
 | **Showroom** | Is it on display at 59A so someone who walks in can see/touch it? | Radio drives ~91%-offline revenue through the door. Not on the floor = not on air. |
 | **Web** | Is there a live collection/product page the URL can land on? | Fix with Ashlea first, or don't air it. |
 | **Ear-ability** | Can a listener *picture* it from words alone (a freestanding bath, brushed-brass tapware, an LED mirror) — or is it a part number? | Pick the next candidate. |
@@ -104,6 +104,13 @@ python3 scripts/script_check.py scripts.txt
 See `assets/example-tapware-zone.txt` for a passing example.
 `scripts.txt` = one script per block, `### <name> (<length>s)` header line, body below,
 one element per line prefixed `SFX:` / `MUSIC:` / `V1:` / `V2:` / `VO:` / `JINGLE:`.
+
+Save the run to `radio/<YYYY-MM>-flight.md` and `radio/<YYYY-MM>-scripts.txt` in the repo
+so Step 7 has a baseline.
+
+**Semrush trend arrays run oldest → newest** (checked Nov 2026 against heated-towel-rail
+winter peaks) — the demand-radar notes say the opposite. Read last year's flight month
+accordingly.
 
 ### Step 4 — Pre-air checklist (every flight, every time)
 

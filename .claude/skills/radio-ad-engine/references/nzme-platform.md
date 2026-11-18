@@ -77,6 +77,8 @@ different platform. **Never mix Code into Elite spots** or vice versa.
 
 ## 7 · Known issues in NZME's drafts (raise with the rep)
 
+- Zone close "Speak to an Elite Bathroomware expert today and make it simple" duplicates the
+  jingle — cut it to fit 30s (done in the Jan 2027 Shower Zone).
 - Concept Two zone scripts run ~100 spoken words + jingle — will not fit 30s. Trim to
   ≤ 75 or book as 45s.
 - Concept One 3 of 4 runs ~95 words — trim.

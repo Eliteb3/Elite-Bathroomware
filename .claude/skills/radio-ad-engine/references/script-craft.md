@@ -1,34 +1,59 @@
-# Script craft — writing Elite radio
+# Script craft — writing Elite radio on the NZME platform
 
-## Word budgets (read at a calm premium pace ≈ 2.3 words/second)
+Write **inside** one of the two NZME frames in `nzme-platform.md` §4. Never invent a
+third structure, a new end line, or a different jingle.
 
-| Format | Max words | Notes |
+## Which frame?
+
+| Job this flight | Frame |
+|---|---|
+| Demand Radar hero category (the monthly driver) | **Concept Two — zone questions** |
+| Brand / pillar / season | **Concept One — "Hear that?"** |
+| Spring Sale (once a year) | Concept One 4 of 4 — the only spot that prices |
+
+Default monthly mix: **1 zone script on the hero category + 1 "Hear that?"** whose SFX and
+pillar point at the same hero where possible (e.g. bath filling → Bath zone month).
+
+## Word budgets (spoken words, jingle and SFX excluded)
+
+| Length | Max spoken words | Why |
 |---|---|---|
-| 30s full spot | 70 | Brand body ≤ 50 + tag ≤ 25 (overlap allowed only if total ≤ 70) |
-| 15s standalone | 35 | Hero + sign-off + address. No brand body. |
-| 10s tag | 25 | Hero + reason to visit + address/URL |
+| 30s | 75 | SFX open ~2s + jingle ~4s + address ~3s leave ~21s of talk |
+| 15s | 35 | Zone opener + 1–2 questions + jingle + address |
+| 45s | 110 | If NZME books the zone scripts long |
 
-A script over budget gets rushed in the booth. Rushed sounds cheap. Cut, don't speed up.
+Over budget = rushed read = sounds cheap. Cut questions, not the jingle or address.
 
-## The shape of a tag (10s)
+## Writing a zone script (Concept Two)
 
-1. **The picture** — one product, one finish, one sensory detail the ear can see.
-2. **The reason now** — why this month (season, new in, demand) — or the decision it
-   makes easy.
-3. **The door** — "See it at Elite Bathroomware, 59A Allens Road, East Tāmaki."
+The four questions ARE the expertise pillar. Good questions:
+- are ones the floor team genuinely asks (check with Jackson) — specific, slightly
+  surprising, the kind a customer hadn't thought of;
+- reveal a real decision (wall type, water pressure, who's lifting it in);
+- end on a light, human one (NZME's "will it get in through the door?").
+
+Bad questions are sales questions ("What's your budget?") or adjectives ("Want a stunning
+vanity?").
+
+Where the Demand Radar shows **which queries are rising** (e.g. "wall hung toilet",
+"LED mirror with demister"), turn the rising query into one of the four questions. That's
+how the spot follows demand without breaking the platform.
+
+## Writing a "Hear that?" (Concept One)
+
+- The SFX must be the benefit, recognisable in 1–2 seconds with eyes closed.
+- "Hear that? That's the sound of…" — the line names the feeling, not the product.
+- V2 proves **one** pillar with **one** Elite fact (670 sqm, six zones, ~25 years, family
+  run, in-house design, finished bathroom not just a quote).
 
 ## Rules
 
-- **One idea per spot.** If you can't say the spot in one sentence, it's two spots.
-- **Name a real product and finish.** "Brushed brass basin mixer" beats "stunning tapware".
-- **Show, don't claim.** Water sound, weight in the hand, light on a finish. No adjectives
-  doing the work of facts.
-- **No brand lists.** One brand max per spot, only if the name helps the listener.
-- **Address once, at the end.** The URL in the 30s if time allows.
-- **Write for the ear.** Short sentences. No parentheses, slashes, ampersands, or numbers
-  that read oddly ("59A" = "fifty-nine A").
-- **Brand phase proves, sale phase prices.** Never both in one spot.
-- **Read it aloud with a stopwatch** before it goes to Josh.
+- One pillar per spot. One idea per spot.
+- Facts over adjectives. "670 square metres, six zones" beats "huge range".
+- No brand lists (one supplier brand max, only if it helps).
+- Brand phase proves, sale phase prices. Only the Spring Sale spot mentions a sale.
+- Write for the ear: "59A" = "fifty-nine A"; Tāmaki = TAH-mah-kee.
+- Read it aloud against a stopwatch with the jingle timed in.
 
 ## Banned phrases (the checker flags these)
 
@@ -38,23 +63,12 @@ bathroom · New Year's resolution · unique designs · dream bathroom · don't m
 hurry in · amazing deals · unbeatable · cheapest · you won't find anywhere else ·
 we've got you covered
 
-They're banned because any bathroom retailer in Auckland could say them. If a line
-could be read by Plumbing World or Bunnings without changing a word, it's not Elite.
+If a line could be read by Plumbing World or Bunnings without changing a word, it's not Elite.
 
-## Bad → good (from the January 2027 draft)
+## Why the January 2027 director drafts fail
 
-**Bad:** "Step into our East Tāmaki showroom and discover unique designs you won't find
-just anywhere, with a huge range to explore."
-→ claims, no picture, three banned phrases.
-
-**Good (tag shape, hero illustrative only):** "This January, run your hand along a
-brushed-brass basin mixer and hear the water before you choose. It's on the wall at
-Elite Bathroomware, 59A Allens Road, East Tāmaki." (≈ 30 words — trim for 10s.)
-
-**Bad:** "Choose from Methven, Caroma, Plumbline, Greens, VODA tapware, and the New
-Zealand-designed Code Interiors range…"
-→ five-brand list (unrememberable), names Code Interiors (separate brand — out of
-scope for Elite radio), names brands stocked by every competitor.
-
-**Bad:** "So, what's your New Year's resolution?"
-→ the most-used January radio opener there is.
+They ignore the platform entirely: no "Hear that?" or zone frame, no jingle, no
+"big blue store", no pillar proof, and they're 77–85 words of generic claims ("unique
+designs", "huge range", "all under one roof"). Ad 2 lists five brands and names Code
+Interiors (separate campaign). A January spot on-platform is a zone script on the
+Demand Radar hero, or a "Hear that?" on the new-year reno moment.

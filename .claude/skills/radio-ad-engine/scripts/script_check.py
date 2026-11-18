@@ -11,8 +11,9 @@ Exit code 1 if any script fails.
 import re
 import sys
 
-BUDGET = {10: 25, 15: 35, 20: 50, 30: 70}
-WPS = 2.3  # calm premium read
+# spoken words, excluding SFX / MUSIC / JINGLE lines
+BUDGET = {10: 25, 15: 35, 20: 50, 30: 75, 45: 110}
+WPS = 2.6  # NZME two-hander pace; jingle + SFX add ~6s on top
 
 BANNED = [
     "huge range", "one-stop shop", "one stop shop", "look no further",
@@ -31,7 +32,7 @@ SPEAKER = re.compile(r"^\s*(VO|Voice \d+|V\d|SFX|MUSIC)\s*[:\-–]\s*", re.I | r
 def check(name, secs, body):
     issues, warns = [], []
     spoken = "\n".join(
-        l for l in body.splitlines() if not re.match(r"^\s*(SFX|MUSIC)\b", l, re.I)
+        l for l in body.splitlines() if not re.match(r"^\s*(SFX|MUSIC|JINGLE)\b", l, re.I)
     )
     spoken = SPEAKER.sub("", spoken)
     words = len(re.findall(r"[A-Za-zĀāĒēĪīŌōŪū0-9'’]+", spoken))
@@ -54,11 +55,19 @@ def check(name, secs, body):
         warns.append("address given without East Tāmaki")
     if "elite bathroomware" not in low:
         issues.append("brand name 'Elite Bathroomware' not said")
-    ms = low.find("bathrooms made simple")
-    if ms != -1 and low[ms + len("bathrooms made simple"):].strip(" .!\n") not in ("",):
-        tail = low[ms + len("bathrooms made simple"):].strip(" .!\n")
-        if len(tail.split()) > 8:
-            issues.append('"Bathrooms Made Simple" must be the sign-off, not mid-script')
+    full = body.lower()
+    jingle = [l for l in body.splitlines() if re.match(r"^\s*JINGLE\b", l, re.I)]
+    if not jingle:
+        issues.append('no JINGLE line — "Speak to Elite. We make bathrooms simple."')
+    elif "we make bathrooms simple" not in jingle[0].lower():
+        issues.append('jingle must read "Speak to Elite. We make bathrooms simple."')
+    if "big blue store" not in full:
+        issues.append('"The big blue store" missing from sign-off')
+    first = next((l for l in body.splitlines() if l.strip()), "").lower()
+    if "bathrooms simple" in first or "bathrooms made simple" in first:
+        issues.append('"bathrooms made simple" used as an opener — it closes the spot')
+    if not (re.search(r"hear that\?", low) or re.search(r"zone", low)):
+        warns.append('not in an NZME frame — no "Hear that?" or Zone opener')
     if PRICE.search(spoken):
         warns.append("price/discount language found — sale phase only, Dean sign-off needed")
     brands = [b for b in ["methven", "caroma", "plumbline", "greens", "voda", "grohe",

@@ -2,12 +2,12 @@
 name: radio-ad-engine
 description: >-
   Run Elite Bathroomware's monthly radio engine with NZME. Turns the Demand Radar
-  signal, Shopify stock and the locked NZME creative platform into one hero product
-  per flight, then writes on-platform 30s / 15s radio scripts (fixed brand body +
-  swappable hero tag), runs the pre-air checks, and hands NZME a paste-ready brief
+  signal, Shopify stock and the locked NZME "Bathrooms made simple" platform into one
+  hero category per flight, then writes on-platform scripts in NZME's two frames
+  ("Hear that?" and the zone-questions route), runs the pre-air checks, and hands NZME a paste-ready brief
   once Josh approves. USE THIS SKILL whenever the user asks for radio ads, radio
   scripts, an NZME brief, a radio flight, "what should the radio say this month",
-  a new tag for the radio spot, rewriting or reviewing radio scripts someone else
+  a new zone script or "Hear that?" spot, rewriting or reviewing radio scripts someone else
   wrote, or wants radio to follow what's selling or trending — even if they never
   say "radio engine". Also trigger to review last flight's results or plan the
   next month's radio.
@@ -23,25 +23,24 @@ can record from, with the reason and the data behind it.
 
 | File | What it gives you |
 |---|---|
-| `references/nzme-platform.md` | The locked NZME creative platform: brand body, voice, music, sign-off, mandatories. **The scripts are wrong without it.** |
+| `references/nzme-platform.md` | The locked NZME platform: "Bathrooms made simple", four pillars, the two creative frames, jingle, mandatories. **The scripts are wrong without it.** |
 | `references/script-craft.md` | How to write for radio at Elite: word budgets, structure, banned phrases, examples of bad → good |
 | Ivy's `references/user.md` + `references/soul.md` (ivy-content-engine skill) | Josh, the team, the guardrails, the voice. Radio obeys every Ivy guardrail. |
 
-If `nzme-platform.md` still has `[FILL FROM NZME DECK]` gaps, **say so at the top of
-the output** and write against what is filled. Never invent NZME's lines, tagline,
-music or VO casting.
+NZME's platform is **locked**. The engine never invents a new structure, end line or
+jingle — it chooses what goes *inside* NZME's frames.
 
 ## The one thing to get right
 
-Every spot = **fixed brand body + swappable hero tag.**
+NZME gave us the frame; demand decides the contents.
 
-| Part | 30s spot | 15s spot | Changes |
-|---|---|---|---|
-| **Brand body** | ~20s (≤ 50 words) | — | Yearly. NZME platform. Recorded once. |
-| **Hero tag** | ~10s (≤ 25 words) | ~15s (≤ 35 words, standalone) | Every flight, from the Demand Radar. |
+| NZME frame | Fixed (NZME) | Swaps every flight (engine) |
+|---|---|---|
+| **Concept Two — "You have questions. Elite has answers."** | Zone opener, "It's the questions the Elite team asks…", jingle, big blue store + address | **Which zone** (= Demand Radar hero category) and **the four questions** (built from rising search queries) |
+| **Concept One — "Hear that?"** | "Hear that?" device, Elite instrumental, jingle, big blue store + address | **SFX, pillar and proof point**, pointed at the same hero/season |
 
-The brand stays consistent; the product follows demand; NZME only re-records 10
-seconds. If the brief asks NZME to rewrite the whole ad every month, it's wrong.
+Default monthly output: **one zone script on the hero + one "Hear that?"** supporting it.
+NZME records the new middle; the music, jingle and sign-off never change.
 
 ---
 
@@ -68,7 +67,7 @@ days before air — confirm the exact lead time with the NZME rep and update thi
 2. **Shopify** — best sellers last 30 days inside the candidate category, and stock
    by SKU **and finish**.
 3. **Known calendar** (Ivy `identity.md` §10) + any live tentpole brief. During a
-   tentpole, the tag serves the campaign — don't invent a parallel strategy.
+   tentpole, the spots serve the campaign — don't invent a parallel strategy.
 4. **Last flight's results** (Step 7 numbers) — what the last hero did.
 5. **What Ivy is briefing** this month. Radio and social should share the hero.
 
@@ -88,11 +87,13 @@ Output the **pick + one runner-up**, one line each on why. Not a menu.
 
 Follow `references/script-craft.md` exactly. Deliver:
 
-1. **30s master** = brand body (from platform, verbatim) + hero tag.
-2. **Two hero-tag variants** (A/B) for the 30s — different angle, same hero.
-3. **15s cut-down** — standalone, hero-led, sign-off + address.
-4. Production notes: tone, pace, pronunciation (**Tāmaki = TAH-mah-kee**), music cue
-   per platform.
+1. **Zone script (30s)** — Concept Two on the hero category. If the zone isn't one NZME
+   wrote (Tapware, Toilet, Accessories), write it in the same frame. Two question-sets
+   (A/B) so NZME can rotate.
+2. **"Hear that?" (30s)** — Concept One, pillar chosen to fit the month (see
+   `nzme-platform.md` §2), SFX that points at the hero.
+3. **15s zone cut-down** — opener, 1–2 questions, jingle, address.
+4. Production notes: voices per frame, SFX, pronunciation (**Tāmaki = TAH-mah-kee**).
 
 Then run the checker on every script and fix anything it flags:
 
@@ -100,7 +101,9 @@ Then run the checker on every script and fix anything it flags:
 python3 scripts/script_check.py scripts.txt
 ```
 
-`scripts.txt` = one script per block, `### <name> (<length>s)` header line, body below.
+See `assets/example-tapware-zone.txt` for a passing example.
+`scripts.txt` = one script per block, `### <name> (<length>s)` header line, body below,
+one element per line prefixed `SFX:` / `MUSIC:` / `V1:` / `V2:` / `VO:` / `JINGLE:`.
 
 ### Step 4 — Pre-air checklist (every flight, every time)
 
@@ -112,8 +115,10 @@ python3 scripts/script_check.py scripts.txt
 - [ ] No Code Interiors, EliteOutlet, clearance or seconds in Elite radio.
 - [ ] Brand phase = no price/discount. Sale phase = offer only if scoped and signed off
       by Dean ("up to X% off" defensible or not said).
-- [ ] "Bathrooms Made Simple" only as the final sign-off, never the opener.
-- [ ] URL lands on the hero's page and the page is live.
+- [ ] Jingle exactly "Speak to Elite. We make bathrooms simple." then "The big blue store,
+      59A Allens Road, East Tāmaki." — nothing after the address.
+- [ ] One pillar per spot; pillar rotated vs last flight.
+- [ ] If a URL is read, it lands on the hero's page and the page is live.
 - [ ] Word counts inside budget (checker passes).
 
 ### Step 5 — Josh approves
@@ -125,7 +130,7 @@ approves. **Nothing goes to NZME un-approved.**
 
 Produce the brief in `assets/nzme-brief-template.md`, filled — paste-ready for the
 NZME rep. If Josh asks, draft the email in Outlook **Drafts** (never send) and create
-an Asana task "Radio tag — <month>" with the brief and the NZME deadline as due date.
+an Asana task "Radio — <month> flight" with the brief and the NZME deadline as due date.
 
 ### Step 7 — Close the loop (after the flight)
 
@@ -149,13 +154,14 @@ flight proves little, three flights in the same direction prove something.
 RADIO — <Month YYYY> flight (<dates>, <station(s)>, <lengths>)
 Input state: Full / Partial — <what's missing>
 
-HERO: <product + finish>  — <one-line verdict with the number behind it>
+HERO ZONE: <category> — lead product <product + finish>  — <one-line verdict with the number behind it>
 Runner-up: <…> — <why not first>
 Gates: Demand ✅ Stock ✅ (<qty / weeks cover>) Showroom ✅ Web ✅ Ear ✅
 
-30s MASTER (tag A)   <script, VO lines>   [<n> words · ~<s>s]
-TAG B                <script>
-15s                  <script>
+ZONE SCRIPT 30s (A)  <script>   [<n> spoken words · ~<s>s + jingle]
+ZONE SCRIPT 30s (B)  <alternate questions>
+HEAR THAT? 30s       <script> — pillar: <…>
+15s ZONE             <script>
 Production notes     <tone, pace, pronunciation, music>
 Pre-air checklist    <ticks / open items>
 Last flight scorecard <4 lines, or "first flight — no baseline">
@@ -166,12 +172,14 @@ Last flight scorecard <4 lines, or "first flight — no baseline">
 - Hero has no search behind it → say so before writing.
 - Stock risk → Josh, loop Dean.
 - Any price or discount → Dean before NZME.
-- Someone hands in scripts that break the platform (generic "huge range / every budget"
-  copy, brand lists, clichés) → review them against `script-craft.md` and say plainly
+- Someone hands in scripts that break the platform (no "Hear that?"/zone frame, no
+  jingle, no big blue store, generic "huge range / every budget" copy, brand lists) → review them against `script-craft.md` and say plainly
   what fails and why, then supply the on-platform version.
 - Radio and Ivy pointing at different heroes in the same month → flag it.
+- NZME drafts over the word budget or missing the macron → send back corrected.
 
 ## Out of scope
 
-Media buying, spot rotation and station mix (NZME + Josh own it) · Code Interiors ·
+Media buying, spot rotation and station mix (NZME + Josh own it) · Code Interiors
+(has its own NZME campaign in the same deck — never mix) ·
 EliteOutlet · trade/wholesale · producing audio.

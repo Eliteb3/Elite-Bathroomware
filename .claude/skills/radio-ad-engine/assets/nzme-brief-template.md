@@ -3,22 +3,26 @@
 **Flight:** <start> – <end> · **Stations:** <…> · **Lengths:** 30s / 15s
 **Scripts final by:** <date> · **Contact:** Josh Martinac, Marketing Director
 
-## This flight's hero
-**<Product + finish>** — <one line why: e.g. "NZ searches for freestanding baths up 28% vs
+## This flight's hero zone
+**The <Zone> Zone — lead product <product + finish>** — <one line why: e.g. "NZ searches for freestanding baths up 28% vs
 same month last year; in stock and on the showroom floor.">
 
 ## What changes vs the platform
-Brand body: **unchanged** (as recorded <date>).
-Hero tag: **new** — see below. Please record tag A and tag B; rotate 50/50.
+Music, jingle ("Speak to Elite. We make bathrooms simple.") and big blue store sign-off:
+**unchanged.** New this flight: the zone and its questions, plus one "Hear that?".
+Please record zone A and B and rotate 50/50.
 
 ## Scripts
-### 30s — brand body + tag A
+### Zone script 30s — A
 <script>
 
-### Tag B (10s, swaps in for tag A)
+### Zone script 30s — B
 <script>
 
-### 15s standalone
+### "Hear that?" 30s — pillar: <…>
+<script>
+
+### Zone 15s
 <script>
 
 ## Production notes
@@ -27,5 +31,5 @@ Hero tag: **new** — see below. Please record tag A and tag B; rotate 50/50.
 - Music/SFX: <per platform>
 
 ## Mandatories confirmed
-59A Allens Road, East Tāmaki · elitebathroomware.co.nz · hours checked for flight dates
+Big blue store · 59A Allens Road, East Tāmaki (with macron) · hours checked for flight dates
 incl. public holidays · all named products in stock · no pricing (brand phase)
